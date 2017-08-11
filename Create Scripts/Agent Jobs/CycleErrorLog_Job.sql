@@ -9,7 +9,7 @@ EXEC  msdb.dbo.sp_add_job @job_name=N'DBA_Cycle_ErrorLog',
 		@notify_level_page=2, 
 		@delete_level=0, 
 		@category_name=N'[Uncategorized (Local)]', 
-		@owner_login_name=N'RWETD\a_gpalacios', @job_id = @jobId OUTPUT
+		@owner_login_name=N'sa', @job_id = @jobId OUTPUT
 GO
 EXEC msdb.dbo.sp_add_jobserver @job_name=N'DBA_Cycle_ErrorLog', @server_name = @@SERVERNAME
 GO
@@ -39,7 +39,7 @@ EXEC msdb.dbo.sp_update_job @job_name=N'DBA_Cycle_ErrorLog',
 		@delete_level=0, 
 		@description=N'', 
 		@category_name=N'[Uncategorized (Local)]', 
-		@owner_login_name=N'RWETD\a_gpalacios', 
+		@owner_login_name=N'sa', 
 		@notify_email_operator_name=N'', 
 		@notify_netsend_operator_name=N'', 
 		@notify_page_operator_name=N''
