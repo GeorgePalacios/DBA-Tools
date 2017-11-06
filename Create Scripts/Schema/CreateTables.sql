@@ -82,4 +82,37 @@ GO
 ALTER TABLE [dbo].[WaitStats] ADD DEFAULT (getdate()) FOR [SnapshotDateTime];
 GO
 
+/****** Object:  Table [dbo].[DatabaseRefreshList]    Script Date: 06/11/2017 10:32:49 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DatabaseRefreshList](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[DatabaseName] [nvarchar](128) NOT NULL,
+	[DataFolder] [nvarchar](255) NOT NULL,
+	[LogFolder] [nvarchar](255) NOT NULL,
+ CONSTRAINT [PK_DatabaseRefreshList] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[PermissionsLog]    Script Date: 06/11/2017 10:33:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PermissionsLog](
+	[DatabaseName] [nvarchar](128) NOT NULL,
+	[Ordering] [int] NOT NULL,
+	[Command] [nvarchar](max) NOT NULL
+) ON [PRIMARY] 
+GO
+
 
