@@ -950,8 +950,6 @@ BEGIN
 
 	END
 
-
-
 	Error_Handling:
 
 	IF @Error = 1
