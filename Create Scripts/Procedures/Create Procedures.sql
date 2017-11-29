@@ -20,6 +20,7 @@ BEGIN
 
 	DELETE FROM [DBA].[dbo].[Errors] WHERE LoggedDateTime <= @DeleteFromDateTime;
 
+	
 END
 GO
 
